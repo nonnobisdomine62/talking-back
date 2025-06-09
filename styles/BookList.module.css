@@ -1,0 +1,33 @@
+.bookList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.bookCard {
+  background: var(--color-bg-alt, #fffdfa);
+  border: 2px solid var(--color-accent, #b48c2c);
+  border-radius: 14px;
+  box-shadow: 0 2px 12px #cbbfa6cc;
+  padding: 2rem 1.2rem;
+  text-align: center;
+  font-family: 'Gothic', serif;
+  color: var(--color-text, #23202b);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.bookCard:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 8px 28px #cbbfa6cc;
+}
+.bookCard h2 {
+  margin-bottom: 1rem;
+  color: var(--color-accent, #b48c2c);
+  font-size: 1.4rem;
+}
+.bookCard a {
+  color: var(--color-accent, #b48c2c);
+  color: #a8893c;
+  font-weight: bold;
+}

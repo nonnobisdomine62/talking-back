@@ -1,0 +1,81 @@
+@font-face {
+  font-family: 'Gothic';
+  src: url('/gothic-font.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Gothic', serif;
+  background: #18141a;
+  color: #f8f6f2;
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+}
+
+body[data-theme='light'] {
+  /* Consistent Light Theme: all backgrounds light, all text dark, all accents visible */
+  --color-bg: #f7f7f9;
+  --color-bg-alt: #fffdfa;
+  --color-text: #23202b;
+  --color-heading: #4b2c09;
+  --color-accent: #b48c2c;
+  --color-accent-bg: #f5e9c9;
+  --color-accent-hover: #dab850;
+  --color-border: #e3d2a2;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* Always use a white GitHub icon */
+.github img {
+  filter: invert(1) brightness(2) grayscale(1) drop-shadow(0 0 2px #000c) !important;
+  transition: filter 0.2s;
+}
+
+
+body[data-theme='dark'] {
+  /* Professional Gothic Dark Theme */
+  --color-bg: #151218;
+  --color-bg-alt: #23202b;
+  --color-text: #f7f7f9;
+  --color-heading: #ffe9a7;
+  --color-accent: #dab850;
+  --color-accent-bg: #3a2e1a;
+  --color-accent-hover: #ffe9a7;
+  --color-border: #4d3c23;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* Improve link and heading contrast in light mode */
+[data-theme='light'] a, [data-theme='light'] a:visited {
+  color: #7b2c1d;
+}
+[data-theme='light'] h1, [data-theme='light'] h2, [data-theme='light'] h3, [data-theme='light'] h4 {
+  color: #7b2c1d;
+}
+
+a {
+  color: #a8893c;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background: #23202b;
+}
+::-webkit-scrollbar-thumb {
+  background: #a8893c;
+  border-radius: 8px;
+}

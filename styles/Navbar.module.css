@@ -1,0 +1,99 @@
+.navbar {
+  width: 100%;
+  background: rgba(24, 20, 26, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 2rem;
+  border-bottom: 2px solid #a8893c;
+  box-shadow: 0 2px 8px #0006;
+}
+[data-theme='light'] .navbar {
+  background: var(--color-bg, #f7f7f9);
+  border-bottom: 2px solid var(--color-accent, #b48c2c);
+  box-shadow: 0 2px 8px #cbbfa6cc;
+}
+
+.brandGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.15em;
+  cursor: pointer;
+  text-decoration: none;
+}
+.brandGroup:hover,
+.brandGroup:active,
+.brandGroup:focus,
+.brandGroup *:hover,
+.brandGroup *:active,
+.brandGroup *:focus {
+  text-decoration: none !important;
+}
+.brand, .brand:hover, .brand:active, .brand:focus,
+.subtitle, .subtitle:hover, .subtitle:active, .subtitle:focus {
+  text-decoration: none !important;
+}
+
+
+
+.brand {
+  font-family: 'Gothic', serif;
+  font-size: 1.5rem;
+  color: #a8893c;
+  letter-spacing: 2px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+[data-theme='light'] .brand {
+  color: var(--color-accent, #b48c2c);
+}
+.subtitle {
+  font-size: 0.95rem;
+  color: #a8893c;
+  font-family: 'EB Garamond', serif;
+  letter-spacing: 0.5px;
+  opacity: 0.85;
+  margin-top: -0.2em;
+  font-weight: normal;
+  text-align: left;
+  padding-left: 2.1rem;
+}
+[data-theme='light'] .subtitle {
+  color: var(--color-accent, #b48c2c);
+}
+
+
+[data-theme='light'] .brand {
+  color: var(--color-accent, #b48c2c);
+}
+
+.right {
+  display: flex;
+  align-items: center;
+}
+.themeToggle {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  margin-right: 1.5rem;
+  cursor: pointer;
+  color: #a8893c;
+}
+[data-theme='light'] .themeToggle {
+  color: var(--color-accent, #b48c2c);
+}
+
+.github img {
+  height: 1.7rem;
+  width: 1.7rem;
+  /* White icon with subtle drop shadow by default (dark theme) */
+  filter: invert(1) brightness(2) grayscale(1) drop-shadow(0 0 2px #000c) !important;
+  transition: filter 0.2s;
+}
+[data-theme='light'] .github img {
+  /* Dark icon with accent drop shadow in light theme */
+  filter: invert(0.18) grayscale(1) brightness(0.8) drop-shadow(0 0 2px #b48c2c) !important;
+}
+

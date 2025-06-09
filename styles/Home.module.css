@@ -1,0 +1,63 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: url('/gothic-bg.jpg') center/cover no-repeat fixed;
+}
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5rem 1rem 2rem 1rem;
+  gap: 1.6rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.title {
+  font-size: 3.2rem;
+  font-family: 'Gothic', serif;
+  letter-spacing: 2px;
+  color: var(--accent, #a8893c);
+  margin-bottom: 0.25rem;
+  text-shadow: 1px 1px 8px #000a;
+  text-align: center;
+}
+.subtitle {
+  font-size: 1.5rem;
+  opacity: 0.93;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  line-height: 1.45;
+}
+.byline {
+  font-size: 1rem;
+  color: #a8893c;
+}
+
+.searchSection {
+  width: 100%;
+  max-width: 420px;
+  margin: 1.2rem auto 1.8rem auto;
+  padding: 1.2rem 1.2rem 0.7rem 1.2rem;
+  background: var(--color-bg-alt, #fffdfa);
+  border: 2px solid var(--color-accent, #b48c2c);
+  border-radius: 13px;
+  box-shadow: 0 2px 16px #cbbfa6cc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.searchLabel {
+  font-family: 'Gothic', serif;
+  color: var(--color-accent, #b48c2c);
+  font-size: 1.08rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.7rem;
+  text-align: center;
+  text-shadow: none;
+}
+
+

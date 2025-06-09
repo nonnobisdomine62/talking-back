@@ -1,0 +1,64 @@
+.container {
+  min-height: 100vh;
+  background: url('/gothic-bg.jpg') center/cover no-repeat fixed;
+  display: flex;
+  flex-direction: column;
+}
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+.title {
+  font-size: 1.7rem;
+  color: #a8893c;
+  margin-bottom: 0.7rem;
+  font-family: 'Gothic', serif;
+  text-shadow: 1px 1px 8px #000a;
+  text-align: center;
+}
+.itemTitle {
+  font-size: 1.2rem;
+  color: #f8f6f2;
+  margin-bottom: 1.2rem;
+  font-family: 'Gothic', serif;
+}
+.text {
+  font-size: 1.1rem;
+  margin-bottom: 1.3rem;
+}
+.verse {
+  background: #23202b;
+  color: #e2d6b7;
+  border-left: 4px solid #a8893c;
+  padding: 0.7rem 1rem;
+  margin: 0.7rem 0 1.2rem 0;
+  font-family: 'Gothic', serif;
+  font-size: 1.02rem;
+  white-space: pre-wrap;
+}
+.citation {
+  font-size: 1rem;
+  color: #a8893c;
+  margin-bottom: 1.2rem;
+}
+.backBtn {
+  background: #a8893c;
+  color: #18141a;
+  border: none;
+  border-radius: 7px;
+  padding: 0.6rem 1.2rem;
+  font-family: 'Gothic', serif;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 1.2rem;
+  box-shadow: 0 2px 8px #0007;
+  transition: background 0.2s, color 0.2s;
+}
+.backBtn:hover {
+  background: #23202b;
+  color: #a8893c;
+}

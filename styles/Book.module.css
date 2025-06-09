@@ -1,0 +1,50 @@
+.container {
+  min-height: 100vh;
+  background: url('/gothic-bg.jpg') center/cover no-repeat fixed;
+  display: flex;
+  flex-direction: column;
+}
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+.homeBtn {
+  display: inline-block;
+  margin-bottom: 1.3rem;
+  margin-top: 0.5rem;
+  padding: 0.45em 1.2em;
+  font-family: 'Gothic', serif;
+  font-size: 1.08rem;
+  color: var(--color-accent, #b48c2c);
+  background: var(--color-bg-alt, #fffdfa);
+  border: 2px solid var(--color-accent, #b48c2c);
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 2px 8px #cbbfa6cc;
+  transition: background 0.13s, color 0.13s, border 0.13s;
+}
+.homeBtn:hover, .homeBtn:focus {
+  background: var(--color-accent-bg, #f5e9c9);
+  color: var(--color-accent, #b48c2c);
+  border-color: var(--color-accent-hover, #dab850);
+}
+
+
+.title {
+  font-size: 2.1rem;
+  color: #a8893c;
+  margin-bottom: 1.4rem;
+  font-family: 'Gothic', serif;
+  text-shadow: 1px 1px 8px #000a;
+  text-align: center;
+}
+.items {
+  width: 100%;
+  max-width: 900px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
