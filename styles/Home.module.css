@@ -92,4 +92,42 @@
   text-shadow: none;
 }
 
+.randomButton {
+  width: 100%;
+  padding: 0.7rem 1.2rem;
+  margin-top: 1rem;
+  background: var(--color-accent-bg, rgba(180, 140, 44, 0.1));
+  color: var(--color-accent, #b48c2c);
+  border: 1px solid var(--color-border, rgba(180, 140, 44, 0.3));
+  border-radius: 6px;
+  font-family: 'Gothic', serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  backdrop-filter: blur(4px);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
 
+.randomButton:hover {
+  background: var(--color-accent-bg, rgba(180, 140, 44, 0.18));
+  border-color: var(--color-accent, #b48c2c);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.randomButton:active {
+  transform: translateY(0);
+  background: var(--color-accent-bg, rgba(180, 140, 44, 0.15));
+}
+
+/* Ensure emoji is properly aligned */
+.randomButton::before {
+  display: inline-block;
+  margin-right: 0.4em;
+}

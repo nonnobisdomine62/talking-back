@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Link from 'next/link';
+import { useCallback } from 'react';
 import Navbar from '../../components/Navbar';
 import ItemCard from '../../components/ItemCard';
 import styles from '../../styles/Book.module.css';
@@ -25,6 +26,14 @@ export async function getStaticProps({ params }) {
 
 export default function BookPage({ book, id, theme, setTheme }) {
   const router = useRouter();
+  
+  // Handle random item selection from current book
+  const handleRandomItem = useCallback(() => {
+    if (book.items.length === 0) return;
+    const randomItemId = Math.floor(Math.random() * book.items.length);
+    router.push(`/book/${id}/item/${randomItemId}`);
+  }, [book.items, id]);
+  
   return (
     <div className={styles.container}>
       <Head>
@@ -32,7 +41,16 @@ export default function BookPage({ book, id, theme, setTheme }) {
       </Head>
       <Navbar theme={theme} setTheme={setTheme} />
       <main className={styles.main}>
-        <Link href="/" className={styles.homeBtn}>← Home</Link>
+        <div className={styles.header}>
+          <Link href="/" className={styles.homeBtn}>← Home</Link>
+          <button 
+            onClick={handleRandomItem} 
+            className={styles.randomButton}
+            aria-label={`Select a random item from ${book.title}`}
+          >
+            🎲 Random Item
+          </button>
+        </div>
         <h1 className={styles.title}>{book.title}</h1>
         <div className={styles.items}>
           {book.items.map((item, idx) => (

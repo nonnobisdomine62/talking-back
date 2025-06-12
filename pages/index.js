@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Navbar from '../components/Navbar';
 import BookList from '../components/BookList';
 import SiteSearch from '../components/SiteSearch';
+import { useCallback } from 'react';
 import styles from '../styles/Home.module.css';
 import { useRouter } from 'next/router';
 import fs from 'fs';
@@ -17,14 +18,22 @@ export async function getStaticProps() {
 import PropTypes from 'prop-types';
 export default function Home({ books, theme, setTheme }) {
   const router = useRouter();
-  // Flatten all items for search
+  // Flatten all items for search and random selection
   const allItems = books.flatMap((book, bookIdx) =>
     book.items.map(item => ({ ...item, bookTitle: book.title, bookIdx }))
   );
+  
   // On selecting a search result, navigate to the item page
   const handleResultSelect = (result) => {
     router.push(`/book/${result.bookIdx}/item/${books[result.bookIdx].items.findIndex(i => i.id === result.id)}`);
   };
+
+  // Handle random item selection from all books
+  const handleRandomItem = useCallback(() => {
+    if (allItems.length === 0) return;
+    const randomItem = allItems[Math.floor(Math.random() * allItems.length)];
+    handleResultSelect(randomItem);
+  }, [allItems]);
   return (
     <div className={styles.container}>
       <Head>
@@ -45,6 +54,13 @@ export default function Home({ books, theme, setTheme }) {
             <span>🔎 Sitewide Search</span>
           </div>
           <SiteSearch data={books} onResultSelect={handleResultSelect} />
+          <button 
+            onClick={handleRandomItem} 
+            className={styles.randomButton}
+            aria-label="Select a random item from all books"
+          >
+            🎲 Random Item
+          </button>
         </div>
         <BookList books={books} />
       </main>
